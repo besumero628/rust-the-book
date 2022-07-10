@@ -1,8 +1,8 @@
-fn main() {
-    println!("Hello World!");
-    another_function();
+fn five() -> i32 {
+    5
 }
 
-fn another_function() {
-    println!("Another function!");
+fn main() {
+    let x = five();
+    println!("value is {}", x);
 }
