@@ -1,20 +1,11 @@
 fn main() {
-    let mut count = 0;
-    'counting_up: loop{
-        println!("count = {}", count);
-        let mut reamining = 10;
+    let mut number = 3;
 
-        loop {
-            println!("remaining = {}", reamining);
-            if reamining == 9 {
-                break;
-            }
-            if count == 2 {
-                break 'counting_up;
-            }
-            reamining -=1;
-        }
-        count += 1;
+    while number != 0 {
+        println!("{}!", number);
+
+        number -= 1;
     }
-    println!("End count = {}", count)
+
+    println!("LIFTOFF!!!")
 }
