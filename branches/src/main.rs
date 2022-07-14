@@ -1,8 +1,20 @@
 fn main() {
-    let number = 3;
-    if number < 5 {
-        println!("condition was true");
-    } else {
-        println!("condition was false");
+    let mut count = 0;
+    'counting_up: loop{
+        println!("count = {}", count);
+        let mut reamining = 10;
+
+        loop {
+            println!("remaining = {}", reamining);
+            if reamining == 9 {
+                break;
+            }
+            if count == 2 {
+                break 'counting_up;
+            }
+            reamining -=1;
+        }
+        count += 1;
     }
+    println!("End count = {}", count)
 }
