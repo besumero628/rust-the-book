@@ -3,10 +3,13 @@ use std::io;
 fn main() {
     println!("Hello, world!");
 
-    let mut guess = String::new();
+    let mut select_number = String::new();
+    io::stdin()
+        .read_line(
+            &mut select_number
+        ).expect("Error");
+    let select_number: u32 = select_number.trim().parse()
+        .expect("Please type a number");
 
-    io::stdin().read_line(&mut guess).expect("Error");
-
-    println!("in : {}", guess)
-
+    println!("in : {}", select_number)
 }
