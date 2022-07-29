@@ -1,3 +1,8 @@
+enum IpAddKind {
+    V4,
+    V6,
+}
+
 fn main() {
-    println!("Hello, world!");
+    let four = IpAddKind::V4;
 }
