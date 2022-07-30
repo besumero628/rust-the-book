@@ -1,9 +1,24 @@
-enum IpAddKind {
-    V4(String),
-    V6(String),
-}
-
 fn main() {
-    let four = IpAddKind::V4(String::from("127.0.0.1"));
-    let six = IpAddKind::V6(String::from("::1"));
+    enum Coin {
+        Penny,
+        Nickel,
+        Dime,
+        Quarter,
+    }
+
+    fn value_incents(coin: Coin) -> u32 {
+        match coin {
+            Coin::Penny => {
+                println!("Lucky penny!");
+                1
+            },
+            Coin::Nickel => 5,
+            Coin::Dime => 10,
+            Coin::Quarter => 25,
+        }
+    }
+
+    let kind = Coin::Penny;
+    value_incents(kind);
+
 }
