@@ -12,7 +12,9 @@ mod front_of_house {
 }
 
 pub fn eat_at_restrant() {
+    // 絶対パス
     crate::front_of_house::hosting::add_to_waitlist();
 
+    // 相対パス
     front_of_house::hosting::add_to_waitlist();
 }
