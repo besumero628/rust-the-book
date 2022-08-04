@@ -1,12 +1,12 @@
 fn main() {
-    let v = vec![1,2,3,4,5];
+    let mut v = vec![1,2,3,4,5];
 
-    let third: &i32 = &v[2];
-    println!("The third element is {}", third);
+    let first = &v[0];
+    println!("The first element is : {:?}", v);
+    println!("The first element is : {}", first);
 
+    v.push(6);
 
-    match v.get(2) {
-        Some(third) => println!("The third element is {}", third),
-        None => println!("There is no third element"),
-    }
+    println!("The first element is : {:?}", v);
 }
+
