@@ -1,0 +1,1 @@
+/Volumes/Extreme\ SSD/10_product/20_practice/80_Rust/01_thebook/general_collection/target/debug/general_collection: /Volumes/Extreme\ SSD/10_product/20_practice/80_Rust/01_thebook/general_collection/src/main.rs
