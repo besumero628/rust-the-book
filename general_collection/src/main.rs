@@ -8,5 +8,15 @@ fn main() {
     v.push(6);
 
     println!("The first element is : {:?}", v);
-}
+
+    for i in &v {
+        println!("{}", i);
+    }
+
+    for i in &mut v {
+        *i += 50;
+    }
+
+    println!("The first element is : {:?}", v);
+ }
 
