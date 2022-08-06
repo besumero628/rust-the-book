@@ -1,14 +1,19 @@
-use std::hash::Hash;
-
 fn main() {
     use std::collections::HashMap;
 
-    let field_name = String::from("Favorite color");
-    let field_value = String::from("Blue");
+    let mut scores = HashMap::new();
 
-    let mut map = HashMap::new();
-    map.insert(field_name, field_value);
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
 
-    println!("{:?}", map);
-    // println!("{:?}", field_name); この時点でmapに所有権がmoveしている
+    let team_name = String::from("Blue");
+    let score = scores.get(&team_name);
+
+    println!("{:?}", &score);
+
+    for (key, value) in &scores {
+        println!("{} {}", key, value);
+    }
+
 }
+
