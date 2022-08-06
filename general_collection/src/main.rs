@@ -1,26 +1,13 @@
 fn main() {
-    let mut s = String::from("foo");
-    s.push_str("bar");
-    s.push('!');
+    use std::collections::HashMap;
 
-    let s1 = String::from("Hello ");
-    let s2 = String::from("world!");
-    let s3 = s1 + &s2;
+    let mut scores = HashMap::new();
 
-    let s4 = String::from("Goodbey");
-    let s5 = String::from("earth!");
-    let s6 = format!("{} - {}", s4, s5);
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
 
-    println!("{}", s);
-    // println!("{}", s1);
-    println!("{}", s2);
-    println!("{}", s3);
-    println!("{}", s4);
-    println!("{}", s5);
-    println!("{}", s6);
+    let teams = vec![String::from("Blue"), String::from("Yellow")];
+    let initial_scores = vec![10,50];
 
-    let hello = "Здравствуйте";
-
-    let s7 = &hello[0..4];
-    println!("{}", s7);
+    let scores: HashMap<_, _> = teams.iter().zip(initial_scores.iter()).collect();
 }
