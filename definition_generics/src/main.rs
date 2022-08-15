@@ -30,9 +30,21 @@ fn largest_char(list: &[char]) -> char {
 //     largest
 // }
 
-struct Point<T,U> {
+struct Point<T> {
     x: T,
-    y: U,
+    y: T,
+}
+
+impl<T> Point<T> {
+    fn x(&self) -> &T {
+        &self.x
+    }
+}
+
+impl Point<f32> {
+    fn distance_from_origin(&self) -> f32 {
+        (self.x.powi(2) + self.y.powi(2)).sqrt()
+    }
 }
 
 fn main() {
@@ -47,6 +59,9 @@ fn main() {
     println!("The largest char is {}", result);
 
     let integer = Point {x: 5, y: 10};
-    let froat = Point {x: 1.0, y: 4.0};
-    let chars = Point {x: "y", y: 7};
+    let froat: Point<f32> = Point {x: 1.0, y: 4.0};
+    let chars = Point {x: "y", y: "x"};
+
+    println!("x = {}", integer.x());
+    println!("{}", froat.distance_from_origin());
 }
