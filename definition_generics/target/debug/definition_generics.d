@@ -1,0 +1,1 @@
+/Volumes/Extreme\ SSD/10_product/20_practice/80_Rust/01_thebook/definition_generics/target/debug/definition_generics: /Volumes/Extreme\ SSD/10_product/20_practice/80_Rust/01_thebook/definition_generics/src/main.rs
