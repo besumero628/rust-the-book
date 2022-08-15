@@ -30,9 +30,9 @@ fn largest_char(list: &[char]) -> char {
 //     largest
 // }
 
-struct Point<T> {
+struct Point<T,U> {
     x: T,
-    y: T,
+    y: U,
 }
 
 fn main() {
@@ -47,6 +47,6 @@ fn main() {
     println!("The largest char is {}", result);
 
     let integer = Point {x: 5, y: 10};
-    let integer = Point {x: 1.0, y: 4.0};
-    let integer = Point {x: "y", y: "x"};
+    let froat = Point {x: 1.0, y: 4.0};
+    let chars = Point {x: "y", y: 7};
 }
