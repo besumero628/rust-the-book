@@ -1,19 +1,10 @@
 pub trait Summary {
+    fn summarize_auther(&self) -> String;
+
     fn summarize(&self) -> String {
         String::from("(Read more...)")
     }
 }
-
-pub struct NewsArticle {
-    pub headline: String,
-    pub location: String,
-    pub author: String,
-    pub content: String,
-}
-
-impl Summary for NewsArticle {
-}
-
 pub struct Tweet {
     pub username: String,
     pub content: String,
@@ -22,9 +13,16 @@ pub struct Tweet {
 }
 
 impl Summary for Tweet {
+    fn summarize_auther(&self) -> String {
+        format!("@{}", self.username)
+    }
     fn summarize(&self) -> String {
         format!("{}: {}", self.username, self.content)
     }
+}
+
+pub fn notify(item: &impl Summary) {
+    println!("Breaking news! {}", item.summarize());
 }
 
 fn main() {
@@ -38,20 +36,7 @@ fn main() {
     };
 
     println!("1 new tweet: {}", tweet.summarize());
+    println!("{}", tweet.summarize_auther());
+    notify(&tweet)
 
-    let article = NewsArticle {
-        // ペンギンチームがスタンレーカップチャンピオンシップを勝ち取る！
-        headline: String::from("Penguins win the Stanley Cup Championship!"),
-        // アメリカ、ペンシルベニア州、ピッツバーグ
-        location: String::from("Pittsburgh, PA, USA"),
-        // アイスバーグ
-        author: String::from("Iceburgh"),
-        // ピッツバーグ・ペンギンが再度NHL(National Hockey League)で最強のホッケーチームになった
-        content: String::from(
-            "The Pittsburgh Penguins once again are the best \
-                hockey team in the NHL.",
-        ),
-    };
-
-    println!("New article available! {}", article.summarize());
 }
