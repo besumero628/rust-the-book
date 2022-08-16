@@ -21,19 +21,23 @@ impl Summary for Tweet {
     }
 }
 
-pub fn notify(item: &impl Summary) {
+pub fn notify<T: Summary>(item: &T) {
     println!("Breaking news! {}", item.summarize());
 }
 
-fn main() {
-    let tweet = Tweet {
+fn returns_summarizable() -> impl Summary {
+    Tweet {
         username: String::from("horse_ebooks"),
         content: String::from(
             "of course, as you probably already know, people",
         ),
         reply: false,
         retweet: false,
-    };
+    }
+}
+
+fn main() {
+    let tweet = returns_summarizable();
 
     println!("1 new tweet: {}", tweet.summarize());
     println!("{}", tweet.summarize_auther());
