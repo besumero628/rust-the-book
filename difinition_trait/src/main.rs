@@ -1,5 +1,7 @@
 pub trait Summary {
-    fn summarize(&self) -> String;
+    fn summarize(&self) -> String {
+        String::from("(Read more...)")
+    }
 }
 
 pub struct NewsArticle {
@@ -10,9 +12,6 @@ pub struct NewsArticle {
 }
 
 impl Summary for NewsArticle {
-    fn summarize(&self) -> String {
-        format!("{}, by {} ({})", self.headline, self.author, self.location)
-    }
 }
 
 pub struct Tweet {
@@ -39,4 +38,20 @@ fn main() {
     };
 
     println!("1 new tweet: {}", tweet.summarize());
+
+    let article = NewsArticle {
+        // ペンギンチームがスタンレーカップチャンピオンシップを勝ち取る！
+        headline: String::from("Penguins win the Stanley Cup Championship!"),
+        // アメリカ、ペンシルベニア州、ピッツバーグ
+        location: String::from("Pittsburgh, PA, USA"),
+        // アイスバーグ
+        author: String::from("Iceburgh"),
+        // ピッツバーグ・ペンギンが再度NHL(National Hockey League)で最強のホッケーチームになった
+        content: String::from(
+            "The Pittsburgh Penguins once again are the best \
+                hockey team in the NHL.",
+        ),
+    };
+
+    println!("New article available! {}", article.summarize());
 }
