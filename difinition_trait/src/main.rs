@@ -34,6 +34,6 @@ fn main() {
     p1.cmp_display();
     p2.cmp_display();
 
-    println!("{}", p1.plus())
+    println!("{}", p1.plus());
 }
 
