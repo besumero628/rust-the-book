@@ -8,4 +8,15 @@ fn main() {
     let i = ImportantExcerpt {
         part: first_sentence,
     };
+
+    let s: &'static str = "test";
+
+    {
+        let s1: &'static str = "test";
+
+        println!("{}",s1);
+    }
+
+    println!("{}",s);
+    
 }
