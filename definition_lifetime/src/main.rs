@@ -1,22 +1,23 @@
-struct ImportantExcerpt<'a> {
-    part: &'a str,
+use std::fmt ::Display;
+
+fn longenst_with_an_announcement<'a, T>(
+    x: &'a str,
+    y: &'a str,
+    ann: T,
+) -> &'a str
+where T: Display,
+{
+    println!("Announcement! {}", ann);
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
 }
 
 fn main() {
-    let novel = String::from("call me Ishmael. Some years ago...");
-    let first_sentence = novel.split('.').next().expect("Could not find a '.'");
-    let i = ImportantExcerpt {
-        part: first_sentence,
-    };
+    let s1 = "thie is s1 sentence";
+    let s2 = "thie is s2 sentence";
 
-    let s: &'static str = "test";
-
-    {
-        let s1: &'static str = "test";
-
-        println!("{}",s1);
-    }
-
-    println!("{}",s);
-    
+    longenst_with_an_announcement(s1, s2, 5);
 }
