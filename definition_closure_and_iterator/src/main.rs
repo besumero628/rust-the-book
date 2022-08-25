@@ -18,15 +18,21 @@ fn simulated_expensive_calculation(intensity: u32) -> u32 {
 }
 
 fn generate_workout(intensity: u32, random_number: u32) {
+    let expensive_closure = |num| {
+        println!("calculationg slowly...");
+        thread::sleep(Duration::from_secs(2));
+        num
+    };
+
     if intensity < 25 {
         println!(
             "Today, do {} pushups!",
-            simulated_expensive_calculation(intensity)
+            expensive_closure(intensity)
         );
 
         println!(
             "Next, do {} situps!",
-            simulated_expensive_calculation(intensity)
+            expensive_closure(intensity)
         );
     } else {
         if random_number == 3 {
