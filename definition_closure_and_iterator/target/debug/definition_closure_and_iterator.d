@@ -1,0 +1,1 @@
+/Volumes/Extreme\ SSD/10_product/20_practice/80_Rust/01_thebook/definition_closure_and_iterator/target/debug/definition_closure_and_iterator: /Volumes/Extreme\ SSD/10_product/20_practice/80_Rust/01_thebook/definition_closure_and_iterator/src/main.rs
