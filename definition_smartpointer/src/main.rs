@@ -1,15 +1,16 @@
-fn main() {
-    let x = 5;
-    let y = MyBox::new(x);
-
-    assert_eq!(5, x);
-    assert_eq!(5, *y);
+struct CustomSmartPointer {
+    data: String,
 }
 
-struct MyBox<T>(T);
-
-impl<T> MyBox<T> {
-    fn new(x: T) -> MyBox<T> {
-        MyBox(x)
+impl Drop for CustomSmartPointer {
+    fn drop(&mut self) {
+        println!("Doropping CustomSmartPointer with data '{}'", self.data);
     }
+}
+
+fn main() {
+    let c = CustomSmartPointer{data: String::from("my stuff")};
+    let d = CustomSmartPointer{data: String::from("other stuff")};
+
+    println!("CustomSmartPointers created.")
 }
