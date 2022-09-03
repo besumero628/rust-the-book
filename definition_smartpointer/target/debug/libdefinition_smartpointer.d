@@ -1,0 +1,1 @@
+/Volumes/Extreme\ SSD/10_product/20_practice/80_Rust/01_thebook/definition_smartpointer/target/debug/libdefinition_smartpointer.rlib: /Volumes/Extreme\ SSD/10_product/20_practice/80_Rust/01_thebook/definition_smartpointer/src/lib.rs
