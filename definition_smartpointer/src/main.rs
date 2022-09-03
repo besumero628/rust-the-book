@@ -1,23 +1,21 @@
-use std::{rc::Rc, cell::RefCell};
+use std::{cell::RefCell, rc::Rc};
 use List::{Cons, Nil};
 
 #[derive(Debug)]
 enum List {
-    Cons(Rc<RefCell<i32>>, Rc<List>),
+    Cons(i32, RefCell<Rc<List>>),
     Nil,
 }
 
-fn main() {
-    let value = Rc::new(RefCell::new(5));
+impl List {
+    fn tail(&self) -> Option<&RefCell<Rc<List>>> {
+        match *self {
+            Cons(_, ref item) => Some(item),
+            Nil => None,
+        }
+    }
+}
 
-    let a = Rc::new(Cons(Rc::clone(&value), Rc::new(Nil)));
+fn main () {
 
-    let b = Cons(Rc::new(RefCell::new(6)), Rc::clone(&a));
-    let c = Cons(Rc::new(RefCell::new(10)), Rc::clone(&a));
-
-    *value.borrow_mut() += 10;
-
-    println!("a after = {:?}", a);
-    println!("a after = {:?}", b);
-    println!("a after = {:?}", c);
 }
