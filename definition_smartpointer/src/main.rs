@@ -15,6 +15,12 @@ fn main() {
     });
 
     println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
+    println!(
+        // leafのstrong_count = {}, weak_count = {}
+        "leaf strong = {}, weak = {}",
+        Rc::strong_count(&leaf),
+        Rc::weak_count(&leaf),
+    );
 
     let branch = Rc::new(Node {
         value: 5,
