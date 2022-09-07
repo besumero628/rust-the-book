@@ -1,0 +1,1 @@
+/Volumes/Extreme\ SSD/10_product/20_practice/80_Rust/01_thebook/definition_thread/target/debug/definition_thread: /Volumes/Extreme\ SSD/10_product/20_practice/80_Rust/01_thebook/definition_thread/src/main.rs
