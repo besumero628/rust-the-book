@@ -1,0 +1,5 @@
+/Volumes/Extreme SSD/10_product/20_practice/80_Rust/01_thebook/advanced_features/target/debug/deps/advanced_features-03b7aa32ead794c0.rmeta: src/main.rs
+
+/Volumes/Extreme SSD/10_product/20_practice/80_Rust/01_thebook/advanced_features/target/debug/deps/advanced_features-03b7aa32ead794c0.d: src/main.rs
+
+src/main.rs:
