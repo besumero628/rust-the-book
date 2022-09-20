@@ -26,4 +26,31 @@ fn main() {
         3 => println!("three"),
         _ => println!("anything"),
     }
+
+    let x4 = 5;
+    match x4 {
+        1..=5 => println!("one through five"),
+        _ => println!("something else")
+    }
+
+    let x5 = 'c';
+
+    match x5 {
+        // ASCII文字前半
+        'a'..='j' => println!("early ASCII letter"),
+        // ASCII文字後半
+        'k'..='z' => println!("late ASCII letter"),
+        // それ以外
+        _ => println!("something else"),
+    }
+
+
+    let num = Some(4);
+
+    match num {
+        // 5未満です: {}
+        Some(x) if x < 5 => println!("less than five: {}", x),
+        Some(x) => println!("{}", x),
+        None => (),
+    }
 }
