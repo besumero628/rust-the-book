@@ -1,6 +1,10 @@
 fn main() {
-    let some_option_value: Option<i32> = Some(5);
-    if let Some(x) = some_option_value{
-        println!("{}", x);
-    };
+    let x = 1;
+
+    match x {
+        1 => println!("one"),
+        2 => println!("two"),
+        3 => println!("three"),
+        _ => println!("anything"),
+    }
 }
