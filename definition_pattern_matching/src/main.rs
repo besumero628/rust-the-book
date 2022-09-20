@@ -1,6 +1,6 @@
 fn main() {
-    let v = vec!["a", "b", "c"];
-    for (index, value) in v.iter().enumerate() {
-        println!("{} is at index {}", value, index);
-    }
+    let some_option_value: Option<i32> = Some(5);
+    if let Some(x) = some_option_value{
+        println!("{}", x);
+    };
 }
