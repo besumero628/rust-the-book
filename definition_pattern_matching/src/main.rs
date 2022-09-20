@@ -18,4 +18,12 @@ fn main() {
     }
 
     println!("at the end: x2 = {:?}, y2 = {:?}", x2, y2);
+
+    let x3 = 1;
+
+    match x3 {
+        1 | 2 => println!("one or two"),
+        3 => println!("three"),
+        _ => println!("anything"),
+    }
 }
