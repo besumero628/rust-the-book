@@ -1,34 +1,31 @@
-trait Pilot {
-    fn fly(&self);
-}
+use std::fmt::{self};
 
-trait Wizard {
-    fn fly(&self);
-}
-
-struct Human;
-
-impl Pilot for Human {
-    fn fly(&self) {
-        println!("This is your captain speaking.");
+trait OutlinePrint: fmt::Display {
+    fn outline_print(&self) {
+        let output = self.to_string();
+        let len = output.len();
+        println!("{}", "*".repeat(len + 4));
+        println!("*{}*", " ".repeat(len + 2));
+        println!("* {} *", output);
+        println!("*{}*", " ".repeat(len + 2));
+        println!("{}", "*".repeat(len + 4));
     }
 }
 
-impl Wizard for Human {
-    fn fly(&self) {
-        println!("Up!");
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+impl fmt::Display for Point {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "({}, {})", self.x, self.y)
     }
 }
 
-impl Human {
-    fn fly(&self) {
-        println!("*waving arms furiously*")
-    }
-}
+impl OutlinePrint for Point{}
 
 fn main() {
-    let person = Human;
-    Pilot::fly(&person);
-    Wizard::fly(&person);
-    person.fly()
+    let p = Point{x: 3, y: 4};
+    p.outline_print()
 }
