@@ -20,7 +20,7 @@ fn handle_connection(mut stream: TcpStream) {
     let mut contents = String::new();
     file.read_to_string(&mut contents).unwrap();
 
-    let response = "HTTP/1.1 200 OK\r\n\r\n";
+    let response = format!("HTTP/1.1 200 OK\r\n\r\n{}", contents);
 
     stream.write(response.as_bytes()).unwrap();
     stream.flush().unwrap();
